@@ -40,4 +40,4 @@ Contributions are welcome! Whether it's a bug report, a feature request, or a pu
 
 ## License
 
-Free Pomodoro is licensed under the MIT License. See [LICENSE](LICENSE) for more details.
+Free Pomodoro is licensed under the MIT License. See [LICENSE](https://github.com/reddytocode/FreePomodoro/blob/main/LICENSE) for more details.
