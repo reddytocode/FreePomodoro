@@ -8,21 +8,27 @@
 import Foundation
 import SwiftUI
 
+
 class ApplicationMenu: NSObject {
     let menu = NSMenu()
     
     func createMenu() -> NSMenu {
-        let helloWorldView = ContentView()
-        let topView = NSHostingController(rootView: helloWorldView)
-        topView.view.frame.size = CGSize(width: 225, height: 225)
+        menu.removeAllItems() // Clear existing items
         
-        let customMenuItem = NSMenuItem()
-        customMenuItem.view = topView.view
+        // Add Settings option
+        let settingsMenuItem = NSMenuItem(title: "Settings", action: #selector(openSettings), keyEquivalent: ",")
+        settingsMenuItem.target = self
+        menu.addItem(settingsMenuItem)
         
-        menu.addItem(customMenuItem)  // Add the customMenuItem to the menu
-        menu.addItem(NSMenuItem.separator())
+        // Add Quit option
+        let quitMenuItem = NSMenuItem(title: "Quit", action: #selector(NSApplication.terminate(_:)), keyEquivalent: "q")
+        menu.addItem(quitMenuItem)
         
         return menu
     }
+    
+    @objc func openSettings() {
+        print("Opening settings...")
+        // Here you would typically open a settings window or view
+    }
 }
-
